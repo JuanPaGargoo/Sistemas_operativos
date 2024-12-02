@@ -1,11 +1,10 @@
-'''
-Diseña un sistema que maneje múltiples dispositivos simulados (disco
-duro, impresora, teclado) y muestra cómo se realiza la comunicación
-entre ellos.
+# Sistema de Comunicación entre Múltiples Dispositivos Simulados
 
-'''
+Diseña un sistema que maneje múltiples dispositivos simulados (disco duro, impresora, teclado) y muestra cómo se realiza la comunicación entre ellos.
 
+## Código para Simular la Comunicación entre Dispositivos
 
+```python
 # Definimos las clases que simulan los dispositivos
 
 class Teclado:
@@ -26,8 +25,7 @@ class DiscoDuro:
 
     def guardar_datos(self, datos):
         self.datos += datos
-        print(f"Datos guardados en el disco duro: {
-              self.datos}")  # Muestra todo lo acumulado
+        print(f"Datos guardados en el disco duro: {self.datos}")  # Muestra todo lo acumulado
 
     def obtener_datos(self):
         """Devuelve los datos almacenados en el disco duro"""
@@ -84,3 +82,30 @@ for tecla in teclas_a_presionar:
 
 # Mostramos el contenido completo que ha sido impreso
 print("\nContenido impreso completo:", impresora.obtener_impresiones())
+```
+
+## Descripción Paso a Paso
+
+1. **Inicialización de los Dispositivos**:
+
+   - Acción: Crear instancias de `Teclado`, `DiscoDuro` e `Impresora`.
+   - Estado del Sistema: Dispositivos listos para ser utilizados.
+
+2. **Presionar Teclas y Comunicación entre Dispositivos**:
+
+   - Acción: El usuario presiona una tecla y el controlador maneja la comunicación.
+   - Flujo de Comunicación:
+     - El `Teclado` registra la tecla presionada.
+     - El `ControladorDeDispositivos` lee la tecla y la guarda en el `DiscoDuro`.
+     - Luego, el `ControladorDeDispositivos` envía la tecla a la `Impresora` para imprimirla.
+   - Salida en Pantalla:
+     - "Tecla 'X' presionada."
+     - "Datos guardados en el disco duro: ..."
+     - "Imprimiendo: X"
+
+3. **Mostrar Contenido Impreso**:
+
+   - Acción: Mostrar todo el contenido impreso por la `Impresora`.
+   - Estado del Sistema: `Impresora` contiene el mensaje completo.
+   - Salida en Pantalla:
+     - "Contenido impreso completo: Hola Mundo"
